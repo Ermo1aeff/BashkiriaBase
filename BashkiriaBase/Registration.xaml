@@ -29,7 +29,7 @@
                         Click="PasswordButton_Click"/>
                     <TextBox x:Name="PasswordTextBox" Height="25" Width="0" Visibility="Hidden"
                              TabIndex="1"/>
-                    <PasswordBox x:Name="PasswordPasswordBox" Height="25" TabIndex="2" FontSize="14"/>
+                    <PasswordBox x:Name="PasswordBox" Height="25" TabIndex="2" FontSize="14"/>
                 </DockPanel>
 
                 <DockPanel Height="25" Margin="0,14,0,0" LastChildFill="False" >

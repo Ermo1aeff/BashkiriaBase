@@ -20,38 +20,58 @@ namespace BashkiriaBase
     /// </summary>
     public partial class Registration : Window
     {
-        private BashkiriaEntities DataBase = new BashkiriaEntities();
+        private BashkiriaEntities DataBase;
 
         public Registration()
         {
             InitializeComponent();
+            try
+            {
+                DataBase = new BashkiriaEntities();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось подключиться к базе данных. Проверьте настройки подключения приложения.",
+                    "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Close();
+            }
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            executors Executors  = new executors();
-            Executors.executor_name = ExecuterTextBox.Text;
-            Executors.login = LoginTextBox.Text;
-            Executors.password = PasswordPasswordBox.Password != "" ? PasswordPasswordBox.Password : PasswordTextBox.Text;
-            // Добавление его в базу данных
-            DataBase.executors.Add(Executors);
-            // Сохранение изменений
-            DataBase.SaveChanges();
-            Close();
+            //if () checkPassword = false;
+
+            bool checkPassword = true;
+
+            if (checkPassword)
+            {
+                executors Executors = new executors();
+                Executors.executor_name = ExecuterTextBox.Text;
+                Executors.login = LoginTextBox.Text;
+                Executors.password = PasswordBox.Password != "" ? PasswordBox.Password : PasswordTextBox.Text;
+                // Добавление пользователя в базу данных
+                DataBase.executors.Add(Executors);
+                // Сохранение изменений
+                DataBase.SaveChanges();
+                Window AutorizationWin = new MainWindow();
+                Close();
+                AutorizationWin.Show();
+            }
+
         }
 
         private void PasswordButton_Click(object sender, RoutedEventArgs e)
         {
-            String Password = PasswordPasswordBox.Password;
-            Visibility Visibility = PasswordPasswordBox.Visibility;
-            double Width = PasswordPasswordBox.ActualWidth;
-            double FontSize = PasswordPasswordBox.FontSize;
+            String Password = PasswordBox.Password;
+            Visibility Visibility = PasswordBox.Visibility;
+            double Width = PasswordBox.ActualWidth;
+            double FontSize = PasswordBox.FontSize;
             // Изменение подписи на кнопке
             PasswordButton.Content = Visibility == Visibility.Visible ? "Скрыть" : "Показать";
             //Переброска информации из TextBox'а в PasswordBox
-            PasswordPasswordBox.Password = PasswordTextBox.Text;
-            PasswordPasswordBox.Visibility = PasswordTextBox.Visibility;
-            PasswordPasswordBox.Width = PasswordTextBox.Width;
+            PasswordBox.Password = PasswordTextBox.Text;
+            PasswordBox.Visibility = PasswordTextBox.Visibility;
+            PasswordBox.Width = PasswordTextBox.Width;
             // Возврат информации из временных буферов в TextBox
             PasswordTextBox.Text = Password;
             PasswordTextBox.Visibility = Visibility;
@@ -61,9 +81,9 @@ namespace BashkiriaBase
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            Window a = new MainWindow();
-            a.Show();
-            this.Close();
+            Window AutorizationWin = new MainWindow();
+            Close();
+            AutorizationWin.Show();
         }
     }
 }
