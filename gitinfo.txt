@@ -1,0 +1,79 @@
+echo "# deleteRepositori" >> README.md
+// Инициализация пути файлов
+git init
+git config --global https.proxy http://3is1:edu-927@192.168.0.3:3128
+git config --global http.proxy http://3is1:edu-927@192.168.0.3:3128
+git config --global https.sslVerify false
+git config --global http.sslVerify false
+git config --global user.email egorka.ermolaev.02@gmai.com
+git config --global user.name "Ermolaeff"
+// Статус репозитория
+git status
+// Добавление в коммит
+git add .
+// Создание ветки
+git branch -M main
+// Создание комита
+git commit -m ""
+// Выбор репозитория
+git remote add origin https://github.com/Ermo1aeff/FifteenGame.git
+// Добавление комита
+git push -u origin main
+
+--------------------------------------
+
+git branch -m name - Создание ветки name
+git checkout name - Переключение на ветку name
+
+git chechout -b name - Создание и переключение на ветку name
+
+git branch - Вывод список локальных веток
+git branch -a - Вывод всех веток
+
+git log --graph - рисует ascii-граф взаимосвязи коммитов
+git log --a - Выводит историю всех имеющихся коммитов
+
+git diff <коммит> <коммит> - Показывает изменения коммитов
+
+{
+	git checkout master - Переход на master
+	git merge name - Слияние
+	git branch -d name - Удаление ветки name
+
+} - Слияние ветки name с master
+
+При конфликте после слияния в конфликтующие файлы будут добавлены строки по типу:
+
+<<<<<<< HEAD:index.html
+<div id="footer">contact : email.support@github.com</div>
+=======
+<div id="footer">
+ please contact us at support@github.com
+</div>
+>>>>>>> name:index.html
+
+Чтобы решить конфликт требуется оставить только один из предложенных вариантов:
+
+<div id="footer">contact : email.support@github.com</div>
+
+или
+
+<div id="footer">
+ please contact us at support@github.com
+</div>
+
+Либо объединить их как-то.
+
+Все остальные строки следует удалить.
+
+После разрешения конфликта запускаем git add, подтверждая тем самым решение конфликта.
+git status - Проверки наличия других конфликтов.
+git commit -m "text" - Создание коммита.
+
+
+
+
+
+
+
+

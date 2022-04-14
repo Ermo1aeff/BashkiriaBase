@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IS_1_Ermolaev_BashkiriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="co_executors">
+    <Key>
+      <PropertyRef Name="co_executor_id" />
+    </Key>
+    <Property Name="co_executor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="program_id" Type="int" />
+    <Property Name="executor_id" Type="int" />
+  </EntityType>
+  <EntityType Name="executors">
+    <Key>
+      <PropertyRef Name="executor_id" />
+    </Key>
+    <Property Name="executor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="executor_name" Type="varchar" MaxLength="100" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="login" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="programs">
+    <Key>
+      <PropertyRef Name="program_id" />
+    </Key>
+    <Property Name="program_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="program_name" Type="varchar" MaxLength="150" />
+    <Property Name="period_begin" Type="date" />
+    <Property Name="executor_id" Type="int" />
+    <Property Name="period_end" Type="date" />
+  </EntityType>
+  <EntityType Name="subprograms">
+    <Key>
+      <PropertyRef Name="subprogram_id" />
+    </Key>
+    <Property Name="subprogram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="program_id" Type="int" />
+    <Property Name="subprogram_name" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_co_executors_executors1">
+    <End Role="executors" Type="Self.executors" Multiplicity="0..1" />
+    <End Role="co_executors" Type="Self.co_executors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="executors">
+        <PropertyRef Name="executor_id" />
+      </Principal>
+      <Dependent Role="co_executors">
+        <PropertyRef Name="executor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_co_executors_programs">
+    <End Role="programs" Type="Self.programs" Multiplicity="0..1" />
+    <End Role="co_executors" Type="Self.co_executors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="programs">
+        <PropertyRef Name="program_id" />
+      </Principal>
+      <Dependent Role="co_executors">
+        <PropertyRef Name="program_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_programs_executors">
+    <End Role="executors" Type="Self.executors" Multiplicity="0..1" />
+    <End Role="programs" Type="Self.programs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="executors">
+        <PropertyRef Name="executor_id" />
+      </Principal>
+      <Dependent Role="programs">
+        <PropertyRef Name="executor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subprograms_programs">
+    <End Role="programs" Type="Self.programs" Multiplicity="0..1" />
+    <End Role="subprograms" Type="Self.subprograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="programs">
+        <PropertyRef Name="program_id" />
+      </Principal>
+      <Dependent Role="subprograms">
+        <PropertyRef Name="program_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IS_1_Ermolaev_BashkiriaModelStoreContainer">
+    <EntitySet Name="co_executors" EntityType="Self.co_executors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="executors" EntityType="Self.executors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="programs" EntityType="Self.programs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subprograms" EntityType="Self.subprograms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_co_executors_executors1" Association="Self.FK_co_executors_executors1">
+      <End Role="executors" EntitySet="executors" />
+      <End Role="co_executors" EntitySet="co_executors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_co_executors_programs" Association="Self.FK_co_executors_programs">
+      <End Role="programs" EntitySet="programs" />
+      <End Role="co_executors" EntitySet="co_executors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_programs_executors" Association="Self.FK_programs_executors">
+      <End Role="executors" EntitySet="executors" />
+      <End Role="programs" EntitySet="programs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subprograms_programs" Association="Self.FK_subprograms_programs">
+      <End Role="programs" EntitySet="programs" />
+      <End Role="subprograms" EntitySet="subprograms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

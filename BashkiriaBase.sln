@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BashkiriaBase", "BashkiriaBase\BashkiriaBase.csproj", "{ED2415CD-0DB6-4161-B30A-0BF90C83E868}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED2415CD-0DB6-4161-B30A-0BF90C83E868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2415CD-0DB6-4161-B30A-0BF90C83E868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2415CD-0DB6-4161-B30A-0BF90C83E868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2415CD-0DB6-4161-B30A-0BF90C83E868}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {207579D2-5903-4C6C-8E3A-C45E090DFE30}
+	EndGlobalSection
+EndGlobal

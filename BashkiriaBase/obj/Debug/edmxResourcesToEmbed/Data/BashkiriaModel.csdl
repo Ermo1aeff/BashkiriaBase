@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IS_1_Ermolaev_BashkiriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="co_executors">
+    <Key>
+      <PropertyRef Name="co_executor_id" />
+    </Key>
+    <Property Name="co_executor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="program_id" Type="Int32" />
+    <Property Name="executor_id" Type="Int32" />
+    <NavigationProperty Name="executors" Relationship="Self.FK_co_executors_executors1" FromRole="co_executors" ToRole="executors" />
+    <NavigationProperty Name="programs" Relationship="Self.FK_co_executors_programs" FromRole="co_executors" ToRole="programs" />
+  </EntityType>
+  <EntityType Name="executors">
+    <Key>
+      <PropertyRef Name="executor_id" />
+    </Key>
+    <Property Name="executor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="executor_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="co_executors" Relationship="Self.FK_co_executors_executors1" FromRole="executors" ToRole="co_executors" />
+    <NavigationProperty Name="programs" Relationship="Self.FK_programs_executors" FromRole="executors" ToRole="programs" />
+  </EntityType>
+  <EntityType Name="programs">
+    <Key>
+      <PropertyRef Name="program_id" />
+    </Key>
+    <Property Name="program_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="program_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="period_begin" Type="DateTime" Precision="0" />
+    <Property Name="executor_id" Type="Int32" />
+    <Property Name="period_end" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="co_executors" Relationship="Self.FK_co_executors_programs" FromRole="programs" ToRole="co_executors" />
+    <NavigationProperty Name="executors" Relationship="Self.FK_programs_executors" FromRole="programs" ToRole="executors" />
+    <NavigationProperty Name="subprograms" Relationship="Self.FK_subprograms_programs" FromRole="programs" ToRole="subprograms" />
+  </EntityType>
+  <EntityType Name="subprograms">
+    <Key>
+      <PropertyRef Name="subprogram_id" />
+    </Key>
+    <Property Name="subprogram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="program_id" Type="Int32" />
+    <Property Name="subprogram_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="programs" Relationship="Self.FK_subprograms_programs" FromRole="subprograms" ToRole="programs" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_co_executors_executors1">
+    <End Role="executors" Type="Self.executors" Multiplicity="0..1" />
+    <End Role="co_executors" Type="Self.co_executors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="executors">
+        <PropertyRef Name="executor_id" />
+      </Principal>
+      <Dependent Role="co_executors">
+        <PropertyRef Name="executor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_co_executors_programs">
+    <End Role="programs" Type="Self.programs" Multiplicity="0..1" />
+    <End Role="co_executors" Type="Self.co_executors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="programs">
+        <PropertyRef Name="program_id" />
+      </Principal>
+      <Dependent Role="co_executors">
+        <PropertyRef Name="program_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_programs_executors">
+    <End Role="executors" Type="Self.executors" Multiplicity="0..1" />
+    <End Role="programs" Type="Self.programs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="executors">
+        <PropertyRef Name="executor_id" />
+      </Principal>
+      <Dependent Role="programs">
+        <PropertyRef Name="executor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subprograms_programs">
+    <End Role="programs" Type="Self.programs" Multiplicity="0..1" />
+    <End Role="subprograms" Type="Self.subprograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="programs">
+        <PropertyRef Name="program_id" />
+      </Principal>
+      <Dependent Role="subprograms">
+        <PropertyRef Name="program_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BashkiriaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="co_executors" EntityType="Self.co_executors" />
+    <EntitySet Name="executors" EntityType="Self.executors" />
+    <EntitySet Name="programs" EntityType="Self.programs" />
+    <EntitySet Name="subprograms" EntityType="Self.subprograms" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_co_executors_executors1" Association="Self.FK_co_executors_executors1">
+      <End Role="executors" EntitySet="executors" />
+      <End Role="co_executors" EntitySet="co_executors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_co_executors_programs" Association="Self.FK_co_executors_programs">
+      <End Role="programs" EntitySet="programs" />
+      <End Role="co_executors" EntitySet="co_executors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_programs_executors" Association="Self.FK_programs_executors">
+      <End Role="executors" EntitySet="executors" />
+      <End Role="programs" EntitySet="programs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subprograms_programs" Association="Self.FK_subprograms_programs">
+      <End Role="programs" EntitySet="programs" />
+      <End Role="subprograms" EntitySet="subprograms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
