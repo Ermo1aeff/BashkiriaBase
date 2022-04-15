@@ -32,12 +32,13 @@
                     <PasswordBox x:Name="PasswordBox" Height="25" TabIndex="2" FontSize="14"/>
                 </DockPanel>
 
-                <DockPanel Height="25" Margin="0,14,0,0" LastChildFill="False" >
-                    <Button x:Name="CancelButton" Content="Отмена" Width="75"
+                <DockPanel Height="35" Margin="0,14,0,0" LastChildFill="False" >
+                    <Label Foreground="Red" x:Name="ErrorMessage"/>
+                    <Button x:Name="CancelButton" Content="Отмена" Width="75" Height="25"
                         DockPanel.Dock="Right" Margin="10,0,0,0" TabIndex="4"
                         IsCancel="True" Click="CancelButton_Click"/>
-                    
-                    <Button x:Name="OkButton" Content="ОК" Width="75" 
+
+                    <Button x:Name="OkButton" Content="ОК" Width="75" Height="25" 
                             DockPanel.Dock="Right" TabIndex="3" IsDefault="True"
                             Click="OkButton_Click"/>
                 </DockPanel>

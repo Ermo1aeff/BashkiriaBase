@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,16 +40,64 @@ namespace BashkiriaBase
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            //if () checkPassword = false;
+            string message = "";
 
-            bool checkPassword = true;
+            string password = PasswordBox.Password != "" ? PasswordBox.Password : PasswordTextBox.Text;
 
-            if (checkPassword)
+            if (password.Length < 8)
+            {
+                message = "Пароль должен быть не менее 8 символов.";
+            }
+
+            Regex regex = new Regex(".*[A-Z].*");
+            if (regex.IsMatch(password))
+            {
+                message = "Пароль должен содержать заглавные и прописные буквы латинского алфавита.";
+            }
+
+            regex = new Regex(".*[a-z].*");
+            if (regex.IsMatch(password))
+            {
+                message = "Пароль должен содержать заглавные и прописные буквы латинского алфавита.";
+            }
+
+            regex = new Regex(@".*\s.*");
+            if (regex.IsMatch(password))
+            {
+                message = "Пароль НЕ должен содержать пробелы!";
+            }
+
+            regex = new Regex(@"(.*\W.*)");
+            if (!regex.IsMatch(password))
+            {
+                message = "Пароль должен содержать специальные символы по типу: ? . \\ # ^ ( ) @.";
+            }
+
+            regex = new Regex(@"(.*[^0-9].*)");
+            if (!regex.IsMatch(password))
+            {
+                message = "Пароль должен содержать цифры.";
+            }
+
+            //regex = new Regex(@"\s*");
+            //if (regex.IsMatch(password))
+            //{
+            //    message = "Пароль должен содержать цифры.";
+            //}
+
+
+            //regex = new Regex("@");
+            //if (regex.IsMatch(password))
+            //{
+            //    message = "Пароль должен содержать цифры.";
+            //}
+
+            if (message == "")
             {
                 executors Executors = new executors();
                 Executors.executor_name = ExecuterTextBox.Text;
                 Executors.login = LoginTextBox.Text;
-                Executors.password = PasswordBox.Password != "" ? PasswordBox.Password : PasswordTextBox.Text;
+                Executors.password = password;
                 // Добавление пользователя в базу данных
                 DataBase.executors.Add(Executors);
                 // Сохранение изменений
@@ -57,7 +106,15 @@ namespace BashkiriaBase
                 Close();
                 AutorizationWin.Show();
             }
-
+            else 
+            {
+                ErrorMessage.FontSize = 12;
+                if (message.Length > 30)
+                {
+                    ErrorMessage.FontSize *= (double)30 / message.Length;
+                }
+                ErrorMessage.Content = message;
+            }
         }
 
         private void PasswordButton_Click(object sender, RoutedEventArgs e)
