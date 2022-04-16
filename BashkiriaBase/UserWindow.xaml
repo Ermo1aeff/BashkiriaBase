@@ -6,7 +6,51 @@
         xmlns:local="clr-namespace:BashkiriaBase"
         mc:Ignorable="d"
         Title="UserWindow" Height="450" Width="800">
-    <Grid>
-        
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#e28743"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderBrush" Value="#e28743"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#eeeee4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130" MinWidth="130" MaxWidth="250"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" MinWidth="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#eab676">
+            <Image Source="logo.png" Width="120" Height="120" Margin="0,10,0,10"/>
+            <Button x:Name="ExecutorButton" Click="ShowExeccutorPage" Content="Подпрограммы"/>
+            <Button x:Name="SubprogramButton" Click="ShowSubprogramPage" Content="Исполнители"/>
+        </StackPanel>
+
+        <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                      Width="3" HorizontalAlignment="Stretch" Background="#eab676"/>
+
+        <Frame x:Name="RootFrame" Grid.Column="2" Grid.Row="0" NavigationUIVisibility="Hidden"/>
+
+        <Rectangle Grid.Column="2" Grid.Row="1" Fill="#eab676"/>
+        <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button x:Name="PreviosPageButton" Content="Назад" Width="80"/>
+            <Button x:Name="NextPageButton" Content="Вперед" Width="80"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="ClosePageButton" Content="Закрыть страницу" 
+                    Width="140"/>
+        </StackPanel>
     </Grid>
+
+    
+
+
 </Window>

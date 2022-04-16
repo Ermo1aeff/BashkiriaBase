@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\App.xaml
-3-71890698
+5-157476225
 2-91198413
-17294811177
+19355362397
 18-273458223
-MainWindow.xaml;Registration.xaml;UserWindow.xaml;
+MainWindow.xaml;Pages\ExecutorPage.xaml;Pages\SubprogramPage.xaml;Registration.xaml;UserWindow.xaml;
 
 True
 

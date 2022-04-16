@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:BashkiriaBase"
         mc:Ignorable="d"
         Title="Форма авторизации" Height="160" Width="400" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Background="#eab676">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#e28743"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderBrush" Value="#e28743"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Wheat"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderBrush" Value="#e28743"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
 
     <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
@@ -29,7 +46,7 @@
                 <TextBox x:Name="PasswordText" Margin="5,5,5,5" Height="25" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" FontSize="14"/>
                 <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="RegistrationButton" Content="Регистрация" Height="25" Width="80" Margin="10,10,10,0"
-                        Click="RegistrationButton_Click"/>
+                        Click="RegistrationButton_Click" FontSize="13"/>
                     <Label Content="|" FontSize="26" FontWeight="Bold" VerticalContentAlignment="Bottom" Foreground="Gray"/>
                     <Button x:Name="AuthorizationCommit" Content="OK" Height="25" Width="80" Margin="10,10,5,0"
                         Click="AuthorizationCommit_Click"/>

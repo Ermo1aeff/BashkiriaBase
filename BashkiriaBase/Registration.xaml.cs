@@ -46,51 +46,45 @@ namespace BashkiriaBase
 
             if (password.Length < 8)
             {
-                message = "Пароль должен быть не менее 8 символов.";
+                message = "Пароль должен быть не менее \n8 символов.";
             }
 
             Regex regex = new Regex(".*[A-Z].*");
-            if (regex.IsMatch(password))
+            if (!regex.IsMatch(password))
             {
-                message = "Пароль должен содержать заглавные и прописные буквы латинского алфавита.";
+                message = "Пароль должен содержать \nзаглавные буквы латинского алфавита.";
             }
 
             regex = new Regex(".*[a-z].*");
-            if (regex.IsMatch(password))
+            if (!regex.IsMatch(password))
             {
-                message = "Пароль должен содержать заглавные и прописные буквы латинского алфавита.";
+                message = "Пароль должен содержать \nпрописные буквы латинского алфавита.";
             }
 
             regex = new Regex(@".*\s.*");
             if (regex.IsMatch(password))
             {
-                message = "Пароль НЕ должен содержать пробелы!";
+                message = "Пароль НЕ должен содержать \nпробелы!";
             }
 
             regex = new Regex(@"(.*\W.*)");
             if (!regex.IsMatch(password))
             {
-                message = "Пароль должен содержать специальные символы по типу: ? . \\ # ^ ( ) @.";
+                message = "Пароль должен содержать специ-\nальные символы по типу: ? . \\ # ^ ( ) @.";
             }
 
-            regex = new Regex(@"(.*[^0-9].*)");
+            regex = new Regex(@"(.*[0-9].*)");
             if (!regex.IsMatch(password))
             {
                 message = "Пароль должен содержать цифры.";
             }
 
-            //regex = new Regex(@"\s*");
-            //if (regex.IsMatch(password))
-            //{
-            //    message = "Пароль должен содержать цифры.";
-            //}
+            string login = LoginTextBox.Text;
 
-
-            //regex = new Regex("@");
-            //if (regex.IsMatch(password))
-            //{
-            //    message = "Пароль должен содержать цифры.";
-            //}
+            if (login.Length < 8)
+            {
+                message = "Логин должен быть не менее \n8 символов.";
+            }
 
             if (message == "")
             {
@@ -109,9 +103,9 @@ namespace BashkiriaBase
             else 
             {
                 ErrorMessage.FontSize = 12;
-                if (message.Length > 30)
+                if (message.Length > 60)
                 {
-                    ErrorMessage.FontSize *= (double)30 / message.Length;
+                    ErrorMessage.FontSize *= (double)60 / message.Length;
                 }
                 ErrorMessage.Content = message;
             }

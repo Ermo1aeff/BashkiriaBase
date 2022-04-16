@@ -23,5 +23,15 @@ namespace BashkiriaBase
         {
             InitializeComponent();
         }
+
+        private void ShowExeccutorPage(object sender, RoutedEventArgs e)
+        {
+            RootFrame.Navigate(new Pages.ExecutorPage());
+        }
+
+        private void ShowSubprogramPage(object sender, RoutedEventArgs e)
+        {
+            RootFrame.Navigate(new Pages.SubprogramPage());
+        }
     }
 }

@@ -7,11 +7,36 @@
         mc:Ignorable="d"
         Title="Регистрация пользователя" Height="200" Width="400"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Background="#eab676">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#e28743"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderBrush" Value="#e28743"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Wheat"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderBrush" Value="#e28743"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="PasswordBox">
+            <Setter Property="Background" Value="Wheat"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderBrush" Value="#e28743"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <DockPanel>
             <StackPanel Margin="10, 5">
-
                 <DockPanel >
                     <Label Content="Исполнитель" FontSize="16" Width="110"/>
                     <TextBox x:Name="ExecuterTextBox" TabIndex="0" Height="25" FontSize="14"/>
@@ -32,15 +57,15 @@
                     <PasswordBox x:Name="PasswordBox" Height="25" TabIndex="2" FontSize="14"/>
                 </DockPanel>
 
-                <DockPanel Height="35" Margin="0,14,0,0" LastChildFill="False" >
-                    <Label Foreground="Red" x:Name="ErrorMessage"/>
+                <DockPanel Height="45" Margin="0,10,0,0" LastChildFill="False" >
+                    <Label Foreground="DarkMagenta" x:Name="ErrorMessage"/>
                     <Button x:Name="CancelButton" Content="Отмена" Width="75" Height="25"
                         DockPanel.Dock="Right" Margin="10,0,0,0" TabIndex="4"
-                        IsCancel="True" Click="CancelButton_Click"/>
+                        IsCancel="True" Click="CancelButton_Click" VerticalAlignment="Top"/>
 
                     <Button x:Name="OkButton" Content="ОК" Width="75" Height="25" 
                             DockPanel.Dock="Right" TabIndex="3" IsDefault="True"
-                            Click="OkButton_Click"/>
+                            Click="OkButton_Click" VerticalAlignment="Top"/>
                 </DockPanel>
             </StackPanel>
         </DockPanel>

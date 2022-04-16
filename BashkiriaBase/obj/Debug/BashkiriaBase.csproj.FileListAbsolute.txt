@@ -94,3 +94,7 @@ D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Bashkiria
 D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.csproj.CopyComplete
 D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.exe
 D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.pdb
+D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\ExecutorPage.g.cs
+D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\SubprogramPage.g.cs
+D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\ExecutorPage.baml
+D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\SubprogramPage.baml
