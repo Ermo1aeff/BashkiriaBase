@@ -49,13 +49,13 @@ namespace BashkiriaBase
 
         private void AuthorizationCommit_Click(object sender, RoutedEventArgs e)
         {
-            executors Executor = DataBase.executors.SingleOrDefault(U => U.login == LoginText.Text && U.password == PasswordText.Text);
-            if (Executor != null)
-            {
+            //executors Executor = DataBase.executors.SingleOrDefault(U => U.login == LoginText.Text && U.password == PasswordText.Text);
+            //if (Executor != null)
+            //{
                 UserWindow window = new UserWindow();
                 Close();
                 window.Show();
-            }
+            //}
         }
 
         private void AuthorizationRollBack_Click(object sender, RoutedEventArgs e)

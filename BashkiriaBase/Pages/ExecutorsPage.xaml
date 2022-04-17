@@ -1,0 +1,53 @@
+﻿<Page x:Class="BashkiriaBase.Pages.ExecutorsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BashkiriaBase.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ExecutorsPage" 
+      Background="#eab676">
+
+    <Grid>
+        <DockPanel x:Name="ReadersDataGridDockPanel" Grid.Row="1" Grid.Column="0" 
+                   Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="30" Grid.ColumnSpan="3" Background="#e28743">
+                <Label Content="Исполнители" FontSize="15" Width="auto" Foreground="White"/>
+            </StackPanel>
+
+            <DockPanel DockPanel.Dock="Top">
+                <Label Content="Поиск:" FontSize="15" Width="auto"/>
+                <ComboBox x:Name="FilterComboBox" Width="120" Height="30"/>
+                <!--SelectionChanged="FilterComboBox_SelectionChanged" />-->
+                <TextBox x:Name="FilterTextBox" Background="Wheat" FontSize="15" Height="30" Width="auto"/>
+                <!--TextChanged="FilterTextBox_TextChanged"/>-->
+            </DockPanel>
+
+            <DockPanel>
+                <StackPanel x:Name="PhotoStackPanel" DockPanel.Dock="Right" Width="Auto">
+                    <Border Background="LightGray" BorderThickness="1" BorderBrush="Gray"/>
+                </StackPanel>
+
+                <DataGrid x:Name="ExecutorGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
+                          Background="Wheat" AlternatingRowBackground="Wheat" RowBackground="#FFEAB676" FontSize="15">
+
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#e28743" />
+                            <Setter Property="Height" Value="25" />
+                            <Setter Property="FontSize" Value="15" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                        <Style TargetType="ScrollBar">
+                            <Setter Property="Background" Value="Wheat" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Исполнитель" Binding="{Binding Path=executor_name}" Width="10*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Page>

@@ -12,17 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BashkiriaBase.Data;
 
 namespace BashkiriaBase.Pages
 {
     /// <summary>
     /// Interaction logic for SubprogramPage.xaml
     /// </summary>
-    public partial class SubprogramPage : Page
+    public partial class SubprogramsPage : Page
     {
-        public SubprogramPage()
+        BashkiriaEntities db = new BashkiriaEntities();
+
+        public SubprogramsPage()
         {
             InitializeComponent();
+            DataContext = this;
+            SubprogramsGrid.ItemsSource = db.subprograms.ToList();
         }
     }
 }

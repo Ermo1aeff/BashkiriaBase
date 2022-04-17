@@ -30,8 +30,9 @@
 
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#eab676">
             <Image Source="logo.png" Width="120" Height="120" Margin="0,10,0,10"/>
-            <Button x:Name="ExecutorButton" Click="ShowExeccutorPage" Content="Подпрограммы"/>
-            <Button x:Name="SubprogramButton" Click="ShowSubprogramPage" Content="Исполнители"/>
+            <Button x:Name="ExecutorButton" Click="ShowExeccutorPage" Content="Исполнители"/>
+            <Button x:Name="SubprogramButton" Click="ShowSubprogramPage" Content="Подпрограммы"/>
+            <Button x:Name="ProgramButton" Click="ShowProgramPage" Content="Программы"/>
         </StackPanel>
 
         <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
@@ -49,8 +50,4 @@
                     Width="140"/>
         </StackPanel>
     </Grid>
-
-    
-
-
 </Window>

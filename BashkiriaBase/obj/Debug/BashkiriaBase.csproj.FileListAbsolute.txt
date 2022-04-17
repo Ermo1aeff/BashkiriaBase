@@ -98,3 +98,35 @@ D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\Exe
 D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\SubprogramPage.g.cs
 D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\ExecutorPage.baml
 D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\SubprogramPage.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\bin\Debug\BashkiriaBase.exe.config
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\bin\Debug\BashkiriaBase.exe
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\bin\Debug\BashkiriaBase.pdb
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\bin\Debug\EntityFramework.dll
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\bin\Debug\EntityFramework.xml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\MainWindow.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Registration.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\UserWindow.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\App.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase_Content.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase_MarkupCompile.cache
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase_MarkupCompile.lref
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\MainWindow.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Registration.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\UserWindow.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.g.resources
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.Properties.Resources.resources
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.csproj.GenerateResource.cache
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.csproj.CopyComplete
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.exe
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.pdb
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\ExecutorsPage.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\ExecutorsPage.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Styles\Styles.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\ProgramsPage.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\ProgramsPage.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\SubprogramsPage.g.cs
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\Pages\SubprogramsPage.baml
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\BashkiriaBase.csproj.AssemblyReference.cache

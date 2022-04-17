@@ -14,8 +14,8 @@
     </Key>
     <Property Name="executor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="executor_name" Type="varchar" MaxLength="100" />
-    <Property Name="password" Type="varchar" MaxLength="50" />
     <Property Name="login" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="programs">
     <Key>
@@ -34,16 +34,6 @@
     <Property Name="subprogram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="program_id" Type="int" />
     <Property Name="subprogram_name" Type="varchar" MaxLength="150" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_co_executors_executors1">
     <End Role="executors" Type="Self.executors" Multiplicity="0..1" />
@@ -98,7 +88,6 @@
     <EntitySet Name="executors" EntityType="Self.executors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="programs" EntityType="Self.programs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="subprograms" EntityType="Self.subprograms" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_co_executors_executors1" Association="Self.FK_co_executors_executors1">
       <End Role="executors" EntitySet="executors" />
       <End Role="co_executors" EntitySet="co_executors" />

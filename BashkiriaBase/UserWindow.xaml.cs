@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BashkiriaBase.Pages;
 
 namespace BashkiriaBase
 {
@@ -26,12 +27,17 @@ namespace BashkiriaBase
 
         private void ShowExeccutorPage(object sender, RoutedEventArgs e)
         {
-            RootFrame.Navigate(new Pages.ExecutorPage());
+            RootFrame.Navigate(new ExecutorsPage());
         }
 
         private void ShowSubprogramPage(object sender, RoutedEventArgs e)
         {
-            RootFrame.Navigate(new Pages.SubprogramPage());
+            RootFrame.Navigate(new SubprogramsPage());
+        }
+
+        private void ShowProgramPage(object sender, RoutedEventArgs e)
+        {
+            RootFrame.Navigate(new ProgramsPage());
         }
     }
 }

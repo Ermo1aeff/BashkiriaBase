@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\obj\Debug\
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\obj\Debug\
 BashkiriaBase
 none
 false
 DEBUG;TRACE
-D:\4ИС1\Ермолаев Е А\BashkiriaBase\BashkiriaBase\App.xaml
-5-157476225
+C:\Users\1\Desktop\git\BashkiriaBase\BashkiriaBase\App.xaml
+71140956114
 2-91198413
-181197721764
-18-273458223
-MainWindow.xaml;Pages\ExecutorPage.xaml;Pages\SubprogramPage.xaml;Registration.xaml;UserWindow.xaml;
+18160199506
+189285766
+MainWindow.xaml;Pages\ExecutorsPage.xaml;Pages\ProgramsPage.xaml;Pages\SubprogramsPage.xaml;Registration.xaml;Styles\Styles.xaml;UserWindow.xaml;
 
 False
 

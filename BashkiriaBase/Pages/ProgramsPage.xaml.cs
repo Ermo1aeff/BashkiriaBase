@@ -17,18 +17,17 @@ using BashkiriaBase.Data;
 namespace BashkiriaBase.Pages
 {
     /// <summary>
-    /// Interaction logic for ExecutorPage.xaml
+    /// Логика взаимодействия для ProgramsPage.xaml
     /// </summary>
-    public partial class ExecutorPage : Page
+    public partial class ProgramsPage : Page
     {
-        Data.BashkiriaEntities db = new BashkiriaEntities();
+        BashkiriaEntities db = new BashkiriaEntities();
 
-        public ExecutorPage()
+        public ProgramsPage()
         {
             InitializeComponent();
             DataContext = this;
-            ExecutorNum.ItemsSource = db.executors.ToList();
-            CarNumColumnChange.Width = new GridLength(0);
+            ProgramsGrid.ItemsSource = db.executors.ToList();
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -51,12 +50,12 @@ namespace BashkiriaBase.Pages
 
         }
 
-        private void ExecutorCommit_Click(object sender, RoutedEventArgs e)
+        private void CarNumCommit_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ExecutorRollback_Click(object sender, RoutedEventArgs e)
+        private void CarNumRollback_Click(object sender, RoutedEventArgs e)
         {
 
         }
